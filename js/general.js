@@ -73,4 +73,28 @@ $(function() {
 			undone.text(result);
 		}
 	});
+
+	//For tab change
+	$("#all_project_tab").addClass("active-tab");
+	$("#star_project").css("display", "none");
+	$("#join_project").css("display", "none");
+	$("#all_project_tab").bind("click", function() {
+		$(".filter").children(".active-tab").removeClass("active-tab");
+		$("#all_project_tab").addClass("active-tab");
+		$(".tab").css("display", "none");
+		$("#all_project").css("display", "block");
+	});
+	$("#star_project_tab").bind("click", function() {
+		$(".filter").children(".active-tab").removeClass("active-tab");
+		$("#star_project_tab").addClass("active-tab");
+		$(".tab").css("display", "none");
+		$("#star_project").css("display", "block");
+	});
+	$("#join_project_tab").bind("click", function() {
+		$(".filter").children(".active-tab").removeClass("active-tab");
+		$("#join_project_tab").addClass("active-tab");
+		$(".tab").css("display", "none");
+		$("#join_project").css("display", "block");
+	});
+
 });

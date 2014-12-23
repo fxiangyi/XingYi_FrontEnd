@@ -118,13 +118,54 @@ $(function() {
 		// TODO -- save the information
 	});
 
+	/*
+		View Detail Undone Page
+	*/
+	// star button, to watch/star that project
+	$("#view-details-undone-wrapper #star").bind("click", function() {
+		// TODO
+	});
+
+
+	/*
+		/Admin Must Login --- SuperUser
+	*/
+	// SuperUser Login
+	$("#superuser-login-wrapper #username").focus();
+	$("#superuser-login-wrapper").bind("keydown", function(e) {
+		if(e.keyCode==13) {
+			var act = document.activeElement.id;
+			if(act=="username") {
+				$("#pwd").focus();
+			} else if(act=="pwd") {
+				//TODO
+				var username = $("#username").val();
+				var pwd = $("#pwd").val();
+				console.log(username+" "+pwd);
+			} 
+		}
+	});
+
+	/*
+		Admin Dashboard
+	*/
+	// project verify, go to project verify
+	$("#admin-dashboard-wrapper project-verify").bind("click", function() {
+		//TODO
+	});
+	// comment manager, go to comment manager
+	$("#admin-dashboard-wrapper comment-manager").bind("click", function() {
+		//TODO
+	});
+
+
 	//load more, ajax, append project to collection, to do
-	$("#more").bind("click", function() {
+	//not needed any more
+	/*$("#more").bind("click", function() {
 		//TODO
 		// just an example
 		$(".collection").append("<article></article>");
-	});
-
+	});*/
 
 
 });
