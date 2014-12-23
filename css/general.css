@@ -853,7 +853,23 @@ input.outline:focus {
 	padding-bottom: 0px;
 }
 
+/***
+**
+	Page Search Nofound
+**
+***/
+ #search-nofound-wrapper section.show {
+ 	padding-top: 0px;
+ }
 
+ #search-nofound-wrapper label {
+ 	margin-left: 10px;
+ }
+
+ #search-nofound-wrapper label>b {
+ 	color: #82B839;
+ }
+ 
 /**
 	for page navigation
 **/
