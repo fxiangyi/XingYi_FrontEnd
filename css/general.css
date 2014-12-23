@@ -850,4 +850,31 @@ input.outline:focus {
 
 #search-result-wrapper section.show {
 	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+
+/**
+	for page navigation
+**/
+#page_navigation {
+	text-align: center;
+}
+
+#page_navigation a {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size: 12px;
+	margin: 2px;
+	color: #82B839;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#page_navigation a:hover,
+.active_page {
+	background-color: #82B839;
+	color: #FFF!important;
 }
