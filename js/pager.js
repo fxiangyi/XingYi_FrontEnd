@@ -13,6 +13,9 @@ $(function() {
 			current_link++;
 		}
 		navigation_html += '<a class="next_link">Next</a>';
+		if(current_link==0) {
+			navigation_html = "";
+		}
 		$(this).append(navigation_html);
 		$(".page_link:first", this).addClass('active_page');
 		content.children().css('display', 'none');

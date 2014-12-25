@@ -122,13 +122,13 @@ $(function() {
 		View Detail Undone Page
 	*/
 	// star button, to watch/star that project
-	$("#view-details-undone-wrapper #star").bind("click", function() {
+	/*$("#view-details-undone-wrapper #star").bind("click", function() {
 		// TODO
-	});
+	});*/
 
 
 	/*
-		/Admin Must Login --- SuperUser
+		Admin Must Login --- SuperUser
 	*/
 	// SuperUser Login
 	$("#superuser-login-wrapper #username").focus();
@@ -167,5 +167,86 @@ $(function() {
 		$(".collection").append("<article></article>");
 	});*/
 
+
+	/*
+		Admin Comments Management
+	*/
+	// NOTE: because of incosisitency, the name may be confused....so ignore that....
+	// Also for this page, pop-up for more details has not been done yet.. May return here some time later
+	// preserve this comment
+	// just set it to be passed
+	$("#admin-comments-management-wrapper #all_project .preserve").bind("click", function() {
+		var row = $(this).parents(".row");
+		row.remove();
+
+		$("#admin-comments-management-wrapper #star_project .collection").append(row);
+
+		//////// A trick, need optimaization1!!!!!!!!!! //////////////////
+		// Page navigation update.... Do it later!!!
+		$("#admin-comments-management-wrapper #all_project").find(".active_page").click();
+		$("#admin-comments-management-wrapper #star_project").find(".active_page").click();
+		///////////////////////////////////////////////////////////////////
+
+		// TODO, for the server
+	});
+	// delete this comment
+	// just set it to be unpassed.
+	$("#admin-comments-management-wrapper #all_project .delete").bind("click", function() {
+		var row = $(this).parents(".row");
+		row.remove();
+
+		$("#admin-comments-management-wrapper #join_project .collection").append(row);
+
+		//////// A trick, need optimaization1!!!!!!!!!! //////////////////
+		// Page navigation update.... Do it later!!!
+		$("#admin-comments-management-wrapper #all_project").find(".active_page").click();
+		$("#admin-comments-management-wrapper #join_project").find(".active_page").click();
+		///////////////////////////////////////////////////////////////////
+
+		// TODO, for the server
+	});
+	// preserve all selected.
+	// just set them to be passed
+	$("#admin-comments-management-wrapper #preserve-checked").bind("click", function() {
+		$("#admin-comments-management-wrapper #all_project").find(".collection").children(".row").filter(function() {
+			return $(this).css("display")=="block";	
+		}).find(".check").filter(function() {
+			return $(this).is(':checked');
+		}).each(function() {
+			var row = $(this).parents(".row");
+			row.remove();
+			$("#admin-comments-management-wrapper #star_project .collection").append(row);
+			
+			// TODO, for the server
+
+		});
+
+		//////// A trick, need optimaization1!!!!!!!!!! //////////////////
+		// Page navigation update.... Do it later!!!
+		$("#admin-comments-management-wrapper #all_project").find(".active_page").click();
+		$("#admin-comments-management-wrapper #star_project").find(".active_page").click();
+		///////////////////////////////////////////////////////////////////
+	});
+	// delete all selected.
+	// just set them to be unpassed
+	$("#admin-comments-management-wrapper #delete-checked").bind("click", function() {
+		$("#admin-comments-management-wrapper #all_project").find(".collection").children(".row").filter(function() {
+			return $(this).css("display")=="block";	
+		}).find(".check").filter(function() {
+			return $(this).is(':checked');
+		}).each(function() {
+			var row = $(this).parents(".row");
+			row.remove();
+			$("#admin-comments-management-wrapper #join_project .collection").append(row);
+			
+			// TODO, for the server
+
+		});
+		//////// A trick, need optimaization1!!!!!!!!!! //////////////////
+		// Page navigation update.... Do it later!!!
+		$("#admin-comments-management-wrapper #all_project").find(".active_page").click();
+		$("#admin-comments-management-wrapper #join_project").find(".active_page").click();
+		///////////////////////////////////////////////////////////////////
+	});
 
 });

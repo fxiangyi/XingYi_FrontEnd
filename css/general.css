@@ -926,8 +926,8 @@ input.outline:focus {
 }
 
 .filter {
-	height: 40px;
-	line-height: 40px;
+	height: 30px;
+	line-height: 30px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-left: 10px;
@@ -1089,6 +1089,110 @@ input.hack-like {
 	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+/**
+	Page Admin Comments Management
+**/
+.row>div {
+	display: inline-block;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+	border: 0px;
+}
+
+#admin-comments-management-wrapper .show-result {
+	height: 40px;
+	line-height: 40px;
+	color: #FFF;
+	margin-bottom: 0px;
+}
+
+.table-header {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #CCC;
+}
+
+.table-header .row {
+	height: 30px;
+	line-height: 30px;
+}
+
+#admin-comments-management-wrapper .col-1 {
+	width: 30px;
+}
+
+#admin-comments-management-wrapper .col-2 {
+	width: 100px;
+}
+
+#admin-comments-management-wrapper .col-3 {
+	width: 100px;
+}
+
+#admin-comments-management-wrapper .col-4 {
+	width: 100px;
+}
+
+#admin-comments-management-wrapper .col-5 {
+	width: 360px;
+}
+
+#admin-comments-management-wrapper .col-6 {
+	width: 250px;
+	text-align: right;
+}
+
+#admin-comments-management-wrapper .show {
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
+#admin-comments-management-wrapper .show .row {
+	width: 960px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#admin-comments-management-wrapper .show .row .col-1,
+#admin-comments-management-wrapper .show .row .col-2,
+#admin-comments-management-wrapper .show .row .col-3,
+#admin-comments-management-wrapper .show .row .col-4,
+#admin-comments-management-wrapper .show .row .col-5,
+#admin-comments-management-wrapper .show .row .col-6 {
+	color: #666;
+	font-size: 12px;
+}
+
+button.red-button {
+	background-color: #ff0000;
+}
+
+button.red-button:hover,
+button.light-red-button:hover {
+	-webkit-box-shadow: 0 0 10px 1px #ff0000;
+	-moz-box-shadow: 0 0 10px 1px #ff0000;
+	-o-box-shadow: 0 0 10px 1px #ff0000;
+	box-shadow: 0 0 10px 1px #ff0000;
+}
+
+button.light-button {
+	opacity: 0.7;
+}
+
+button.light-red-button {
+	background-color: #ff0000;
+	opacity: 0.7;
+}
+
+button.light-button:hover,
+button.light-red-button:hover {
+	opacity: 1;
 }
 
 /**

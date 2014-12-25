@@ -97,4 +97,25 @@ $(function() {
 		$("#join_project").css("display", "block");
 	});
 
+	//For Page Admin Comments Management
+	$("#admin-comments-management-wrapper #check-all").bind("click", function() {
+		if($(this).is(':checked')) {		// cancel checked
+			$(".tab").filter(function() {
+				return $(this).css("display")=="block";
+			}).find(".collection").children(".row").filter(function() {
+				return $(this).css("display")=="block";
+			}).find(".check").each(function() {
+				$(this).prop("checked", true);
+			});
+		} else {	// check
+			$(".tab").filter(function() {
+				return $(this).css("display")=="block";
+			}).find(".collection").children(".row").filter(function() {
+				return $(this).css("display")=="block";
+			}).find(".check").each(function() {
+				$(this).prop("checked", false);
+			});
+		}
+	});
+
 });
