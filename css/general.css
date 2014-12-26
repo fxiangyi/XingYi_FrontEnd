@@ -1320,6 +1320,46 @@ input.hack-like {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+#admin-dashboard-wrapper .dashboard label:first-child {
+	background: url("../img/icon1.png");
+	background-size: 70px 70px;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	background-color: #bad785;
+}
+
+#admin-dashboard-wrapper .dashboard label:nth-child(2) {
+	background: url("../img/icon2.png");
+	background-size: 70px 70px;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	background-color: #82b839;
+}
+
+#dashboard-individual-wrapper .dashboard label:first-child {
+	background: url("../img/icon3.png");
+	background-size: 70px 70px;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	background-color: #bad785;
+}
+
+#dashboard-individual-wrapper .dashboard label:nth-child(2) {
+	background: url("../img/icon4.png");
+	background-size: 70px 70px;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	background-color: #82b839;
+}
+
+#dashboard-individual-wrapper .dashboard label:nth-child(3) {
+	background: url("../img/icon5.png");
+	background-size: 70px 70px;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	background-color: #007942;
+}
+
 /**
 	Page Admin Comments Management
 **/
