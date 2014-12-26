@@ -1,0 +1,263 @@
+	<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset=utf-8>
+	<title>行益网-Operations</title>
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="js/general.js"></script>
+	<script type="text/javascript" src="js/interface.js"></script>
+	<script type="text/javascript" src="js/pager.js"></script>
+</head>
+<body>
+	
+	<!-- the header, including logo, search input, login and register entries -->
+	<header>
+		<div class="wrapper" id="header-wrapper">
+			<div id="logo">
+				<div id="logo-img">
+					<img src="img/logo.png">
+				</div>
+				<div id="logo-name">
+					<img src="img/name.png">
+				</div>
+			</div>
+			<!-- the search input, login and register entries -->
+			<div id="entry">
+				<div id="search">
+					<input id="search-box" type="search">
+					<img id="search-icon" src="img/search.png" placeholder="搜索..." autocomplete="off">
+				</div>
+				<label>您好，<a id="user-entry">Sheer</a></label>
+				<a id="dashboard-entry">Dashboard</a>
+				<a id="logout-entry">登出</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- the container -->
+	<div id="content">
+		<div class="wrapper" id="recent-operations-user-wrapper">
+			<section class="container">
+				<h1 class="section-title">
+					最近操作
+				</h1>
+				<a class="section-title-more" id="go-back-dashboard">
+					Back to DashBoard>
+				</a>
+				<section class="filter">
+					<label>显示条件</label>
+					<a id="all_project_tab">最近一星期</a>
+					<a id="star_project_tab">最近三个月</a>
+					<a id="join_project_tab">最近一年内</a>
+				</section>
+				<section class="table-header">
+					<article class="row">
+						<div class="col-1">
+							时间
+						</div>
+						<div class="col-2">
+							操作内容
+						</div>
+					</article>
+				</section>
+				<!-- Tab 1 -->
+				<section id="all_project" class="tab">
+					<section class="show">
+						<div class="collection">
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									对“XXXXXX”项目捐款23432元人民币
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									关注了“X的公司的分公司的分公司XXXXX”项目
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									在“这里需要一个项目名字”项目中留下评论
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									注册新账户，欢迎来到行益网
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									要像这样按照时间倒叙排列，一页显示10条，主要内容就是上面四种
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="page_navigation">
+						<input type='hidden' class='current_page' />
+						<input type='hidden' class='show_per_page' value='10' />
+					</section>
+				</section>
+
+				<!-- Tab 2 -->
+				<section id="star_project" class="tab">
+					<section class="show">
+						<div class="collection">
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									对“XXXXXX”项目捐款23432元人民币
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									关注了“X的公司的分公司的分公司XXXXX”项目
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									在“这里需要一个项目名字”项目中留下评论
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									注册新账户，欢迎来到行益网
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									要像这样按照时间倒叙排列，一页显示10条，主要内容就是上面四种
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="page_navigation">
+						<input type='hidden' class='current_page' />
+						<input type='hidden' class='show_per_page' value='10' />
+					</section>
+				</section>
+
+				<!-- Tab 3 -->
+				<section id="join_project" class="tab">
+					<section class="show">
+						<div class="collection">
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									对“XXXXXX”项目捐款23432元人民币
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									关注了“X的公司的分公司的分公司XXXXX”项目
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									在“这里需要一个项目名字”项目中留下评论
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									注册新账户，欢迎来到行益网
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/13/2014 14:20:21
+								</div>
+								<div class="col-2">
+									要像这样按照时间倒叙排列，一页显示10条，主要内容就是上面四种
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="page_navigation">
+						<input type='hidden' class='current_page' />
+						<input type='hidden' class='show_per_page' value='10' />
+					</section>
+				</section>
+				
+			</section>
+		</div>
+	</div>
+
+	<!-- the footer -->
+	<footer>
+		<div class="wrapper">
+			<h1 class="section-title">
+				关于我们
+			</h1>
+			<section id="author-gallery">
+				<img src="img/p1.gif">
+				<img src="img/p2.gif">
+				<img src="img/p3.gif">
+				<img src="img/p4.gif">
+				<img src="img/p5.gif">
+				<img src="img/p6.gif">
+				<img src="img/p7.gif">
+			</section>
+			
+			<section id="site-info">
+				<ul class="nav">
+					<li>
+						<h1>A</h1>
+						<b>TEL</b>
+						<i>188-1736-2313</i>
+					</li>
+					<li>
+						<h1>B</h1>
+						<b>MAIL</b>
+						<a href="mailto:sheer.linnan@outlook.com"><i>sheer.linnan@outlook.com</i></a>
+					</li>
+					<li>
+						<h1>C</h1>
+						<b>&copy;2014</b>
+						<i>行益网 版权所有</i>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+
+</body>
+</html>

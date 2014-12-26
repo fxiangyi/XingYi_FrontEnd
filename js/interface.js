@@ -119,12 +119,12 @@ $(function() {
 	});
 
 	/*
-		View Detail Undone Page
+		View Detail Page
 	*/
 	// star button, to watch/star that project
-	/*$("#view-details-undone-wrapper #star").bind("click", function() {
+	$("#view-details-wrapper #star").bind("click", function() {
 		// TODO
-	});*/
+	});
 
 
 	/*
@@ -248,5 +248,82 @@ $(function() {
 		$("#admin-comments-management-wrapper #join_project").find(".active_page").click();
 		///////////////////////////////////////////////////////////////////
 	});
+
+
+	/**
+		Individual Dashboard
+	**/
+	// operate history, go to operate history, link
+	$("#dashboard-individual-wrapper #operate-history").bind("click", function() {
+		location.href = "recent_operations_user.html";
+		//TODO
+	});
+	// scan star, have a look at projects starring
+	$("#dashboard-individual-wrapper #scan-star").bind("click", function() {
+		location.href = "view_followedpjs_user.html";
+		//TODO
+	});
+	// scan join, have a look at projects joining
+	$("#dashboard-individual-wrapper #scan-join").bind("click", function() {
+		location.href = "view_participatingpjs_user.html";
+		//TODO
+	});
+
+	/**
+		Recent Operations User
+	**/
+	// go back to dashboard
+	$("#go-back-dashboard").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		//TODO
+	});
+	
+	/**
+		View Followed Projects User
+	**/
+	// button unstar, just mark that project not followed
+	$("#view-followedpjs-user-wrapper .unstar").bind("click", function() {
+		//TODO
+	});
+
+	/*
+		View Detail
+	*/
+	// this is for donate button, go to donate page
+	$("#view-details-wrapper #donate").bind("click", function() {
+		location.href = "donate.html";
+	});
+	//this is for comment button, just make comments
+	$("#view-details-wrapper #make-comment").bind("click", function() {
+		var isAnonymous = $(".comment-form input[type='checkbox']").is(':checked');
+		var comment = $(".comment-form textarea").val();
+		alert(comment);
+	});
+	//this is for apply confirm
+	$("#view-details-wrapper #apply-form #confirm-apply").bind("click", function() {
+		var reason = $("#view-details-wrapper #apply-form textarea").val();
+		// TODO, the server
+
+	});
+
+	/*
+		Donate
+	*/
+	// back
+	$("#donate-wrapper #return").bind("click", function() {
+		location.href = "view_detail.html";
+	});
+	// donate
+	$("#donate-wrapper #go-to-donate").bind("click", function() {
+		var _money = $("input[name='money']:checked").val();
+		if(_money=="其他")
+			var money = $("#donate-wrapper input[type='text']").val();
+		else
+			var money = parseInt(_money);
+		var way = $("input[name='way']:checked").val();
+		var isAnonymous = $("#donate-wrapper input[type='checkbox']").is(':checked');
+		//TODO
+	});
+	
 
 });
