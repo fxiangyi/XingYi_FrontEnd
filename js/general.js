@@ -131,7 +131,7 @@ $(function() {
 		var ey = parseInt(endtime[2]);
 		return (ey-sy)*360+(em-sm)*30+(ed-sd);
 	}
-	$("#view-details-wrapper .project-event-show").children(".event").each(function() {
+	$(".project-event-show").children(".event").each(function() {
 		var starttime = $("i.start-time").text().split("/");
 		var endtime = $("i.end-time").text().split("/");
 		var total = days(starttime, endtime);
@@ -150,11 +150,11 @@ $(function() {
 		$(".event").eq($(".flag").index($(this))).css("display", "block");
 	});
 	// show the lastest event
-	var eventCount = $("#view-details-wrapper .event").size();
+	var eventCount = $(".event").size();
 	if(eventCount==0) {
-		$("#view-details-wrapper .project-event-show").css("display", "none");
+		$(".project-event-show").css("display", "none");
 	} else {
-		$("#view-details-wrapper .flag").eq(eventCount-1).click();
+		$(".flag").eq(eventCount-1).click();
 	}
 	// then is for tab bar
 	$("#view-details-wrapper .tab-bar").bind("click", function() {
@@ -186,6 +186,67 @@ $(function() {
 		return parseFloat($("#view-details-wrapper .project-progress-complete").text())*parseFloat($("#view-details-wrapper .donate-progress label:last-child").text());
 	});
 
+	/*
+		For Page View Participating User
+	*/
+	$("#view-participatingpjs-user-wrapper .show .collection").children(".project-wrapper").each(function() {
+		var type = parseInt($(this).children("i").text());
+		switch(type) {
+			case 1:
+				var html = "<img src='img/passed-flag.png' class='status-flag'>";
+				break;
+			case 2:
+				var html = "<img src='img/pending-flag.png' class='status-flag'>";
+				break;
+			case 3:
+				var html = "<img src='img/failed-flag.png' class='status-flag'>";
+				break;
+			default:
+				var html = "";
+		}
+		$(this).append(html);
+	});
+
+	/*
+		For Page View All Project Manager
+	*/
+	$("#view-all-project-manager-wrapper .show .collection").children(".project-wrapper").each(function() {
+		var type = parseInt($(this).children("i").text());
+		switch(type) {
+			case 1:
+				var html = "<img src='img/passed-flag.png' class='status-flag'>";
+				html += "<div class='project-operate'><button class='rounded-button'>EDIT</button></div>";
+				break;
+			case 2:
+				var html = "<img src='img/pending-flag.png' class='status-flag'>";
+				html += "<div class='project-operate'><button class='rounded-button'>EDIT</button></div>";
+				break;
+			case 3:
+				var html = "<img src='img/failed-flag.png' class='status-flag'>";
+				html += "<div class='project-operate'><button class='rounded-button disable-button' disabled='disabled'>EDIT</button></div>";
+				break;
+			default:
+				var html = "";
+		}
+		$(this).append(html);
+	});
+
+	/*
+		For Page Create New Project Manager
+	*/
+	$("#create-new-project-manager-wrapper .fold").each(function() {
+		$(this).parents(".row").nextAll().fadeOut();
+	});
+	$("#create-new-project-manager-wrapper .fold").bind("click", function() {
+		var ele = $(this).parents(".row").next();
+		if(ele.css("display")=="none")
+			$(this).parents(".row").nextAll().fadeIn();
+		else
+			$(this).parents(".row").nextAll().fadeOut();
+	});
+	$("#create-new-project-manager-wrapper .input-file input[type='file']").change(function() {
+		$(".input-file+label").text($(this).val());
+	});
 
 
 });

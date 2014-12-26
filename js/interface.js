@@ -312,6 +312,7 @@ $(function() {
 	// back
 	$("#donate-wrapper #return").bind("click", function() {
 		location.href = "view_detail.html";
+		// TODO
 	});
 	// donate
 	$("#donate-wrapper #go-to-donate").bind("click", function() {
@@ -325,5 +326,115 @@ $(function() {
 		//TODO
 	});
 	
+	/**
+		For Dashboard Organization
+	**/
+	// create a project
+	$("#dashboard-organization-wrapper #create-project").bind("click", function() {
+		location.href = "create_new_project_manager.html";
+		// TODO
+	});
+	// edit project
+	$("#dashboard-organization-wrapper #edit-project").bind("click", function() {
+		location.href = "view_all_project_manager.html";
+		// TODO
+	});
+
+	/*
+		For View All Project Manager
+	*/
+	// Edit projects
+	$("#view-all-project-manager-wrapper button.rounded-button").filter(function() {
+		return !$(this).hasClass("disable-button")
+	}).bind("click", function() {
+		// TODO, just go to project
+	});
+
+
+	/**
+		For Create New Project Manager
+	**/
+	$("#create-new-project-manager-wrapper #publish-project").bind("click", function() {
+		var name_of_project = $("#name-of-project").val();
+		var intro_of_project = $("#intro-of-project").val();
+		var filename = $("input[type='file']").val();
+		var reason_of_project = $("#reason-of-project").val();
+		var title_of_copy = $("#title-of-copy").val();
+		var content_of_copy = $("#content-of-copy").val();
+		var inform_of_join = $("#inform-of-join").val();
+		var goal_of_kick = $("#goal-of-kick").val();
+		var explain_of_goal = $("#explain-of-goal").val();
+		var content_of_intro = $("#content-of-intro").val();
+		//TODO,  for the server
+	});
+
+	/**
+		For Dashboard Edit Project
+	**/
+	// base information
+	$("#dashbaord-edit-project-wrapper #base-info").bind("click", function() {
+		location.href = "baseinfo_view.html";
+		//TODO
+	});
+	// Message Update
+	$("#dashbaord-edit-project-wrapper #message-update").bind("click", function() {
+		location.href = "add_news.html";
+		//TODO
+	});
+	// Expense Management
+	$("#dashbaord-edit-project-wrapper #expense-manage").bind("click", function() {
+		location.href = "bookkeeping.html";
+		//TODO
+	});
+	// Volunteer Management
+	$("#dashbaord-edit-project-wrapper #joiner-manage").bind("click", function() {
+		location.href = "volunteer.html";
+		//TODO
+	});
+
+	/**
+		For BaseInfo View
+	**/
+	// save button
+	$("#baseinfo-view-wrapper #save-project").bind("click", function() {
+		var name_of_project = $("#name-of-project").text();
+		var intro_of_project = $("#intro-of-project").text();
+		var filename = $("#project-pictures").text();
+		var title_of_copy = $("#title-of-copy").text();
+		var content_of_copy = $("#content-of-copy").text();
+		var inform_of_join = $("#inform-of-join").text();
+		var goal_of_kick = $("#goal-of-kick").text();
+		var explain_of_goal = $("#explain-of-goal").text();
+		var content_of_intro = $("#content-of-intro").text();
+		//TODO,  for the server
+
+	});
+	// edit button, go to baseinfo_edit
+	$("#baseinfo-view-wrapper .edit-item").bind("click", function() {
+		location.html = "baseinfo_edit.html";
+		// TODO
+	});
+
+	/**
+		For BaseInfo Edit
+	**/
+	// save button
+	$("#baseinfo-edit-wrapper #save-project").bind("click", function() {
+		var name_of_project = $("#name-of-project").text();
+		var intro_of_project = $("#intro-of-project").text();
+		var filename = $("#project-pictures").text();
+		var title_of_copy = $("#title-of-copy").text();
+		var content_of_copy = $("#content-of-copy").text();
+		var inform_of_join = $("#inform-of-join").text();
+		var goal_of_kick = $("#goal-of-kick").text();
+		var explain_of_goal = $("#explain-of-goal").text();
+		var content_of_intro = $("#content-of-intro").text();
+		//TODO,  for the server
+
+	});
+	// save temporarily
+	$("#baseinfo-edit-wrapper .save-item").bind("click", function() {
+		// TODO
+	});
 
 });
