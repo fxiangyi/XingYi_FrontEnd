@@ -263,4 +263,23 @@ $(function() {
 		$("#volunteer-management-wrapper .show-result").eq(1).css("display", "block");	
 	});
 
+	/**
+		For Page Project-verify
+	**/
+	// set status to be passed
+	$("#project-verify-wrapper .show-result").eq(1).css("display", "none");
+	$("#project-verify-wrapper .show-result").eq(2).css("display", "none");
+	$("#project-verify-wrapper #all_project_tab").bind("click", function() {
+		$("#project-verify-wrapper .show-result").css("display", "none");
+		$("#project-verify-wrapper .show-result").eq(0).css("display", "block");	
+	});
+	$("#project-verify-wrapper #star_project_tab").bind("click", function() {
+		$("#project-verify-wrapper .show-result").css("display", "none");
+		$("#project-verify-wrapper .show-result").eq(1).css("display", "block");	
+	});
+	$("#project-verify-wrapper #join_project_tab").bind("click", function() {
+		$("#project-verify-wrapper .show-result").css("display", "none");
+		$("#project-verify-wrapper .show-result").eq(2).css("display", "block");	
+	});
+
 });

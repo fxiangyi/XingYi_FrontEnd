@@ -40,19 +40,19 @@ $(function() {
 	});
 	
 	/*
-		Profile View Page
+		Profile View Page, if this page has been deleted, then ignore it.
 	*/
 	// edit button -- go to profile edit page
-	$("#profile-edit-wrapper #edit").bind("click", function() {
+	/*$(".profile-edit-wrapper #edit").bind("click", function() {
 		// TODO
 		location.href = "profile_edit.html";
-	});
+	});*/
 
 	/*
 		Profile Edit Page
 	*/
 	// save button
-	$("#profile-edit-wrapper #save").bind("click", function() {
+	/*$(".profile-edit-wrapper #save").bind("click", function() {
 		var gender = $("input[name='gender']:checked").val();
 		var nickname = $("#nickname").val();
 		var phonenumber = $("#number").val();
@@ -61,10 +61,46 @@ $(function() {
 		// TODO -- save the information
 	});
 	// cancel button, go back to the previous page, here is profile view page
-	$("#profile-edit-wrapper #cancel").bind("click", function() {
+	$(".profile-edit-wrapper #cancel").bind("click", function() {
 		// TODO
 		location.href = "profile_view.html";
+	});*/
+
+	/*
+		Individual Profile Edit Page
+	*/
+	$("#individual-profile #save").bind("click", function() {
+		var gender = $("input[name='gender']:checked").val();
+		var nickname = $("#nickname").val();
+		var phonenumber = $("#number").val();
+		var email = $("#email").val();
+		console.log(gender+" "+nickname+" "+phonenumber+" "+email);
+		// TODO -- save the information
 	});
+	$("#individual-profile #cancel").bind("click", function() {
+		// TODO-- cancel edit
+	});
+
+	/*
+		Organization Profile Edit Page
+	*/
+	$("#organization-profile #save").bind("click", function() {
+		var gender = $("input[name='gender']:checked").val();
+		var nickname = $("#nickname").val();
+		var phonenumber = $("#number").val();
+		var email = $("#email").val();
+		var intro = $("#intro").val();
+		console.log(gender+" "+nickname+" "+phonenumber+" "+email+" "+intro);
+		// TODO -- save the information
+	});
+	$("#organization-profile #cancel").bind("click", function() {
+		// TODO-- cancel edit
+	});
+
+
+	/*
+
+	*/
 
 	/*
 		Forget Reset Page
@@ -611,6 +647,41 @@ $(function() {
 		var row = $(this).parents(".card-part");
 		row.remove();
 		// TODO, for the server
+	});
+
+
+	/**
+		For Page Project-verify
+	**/
+	// set status to be passed
+	$("#project-verify-wrapper .show .card-part button.pass").bind("click", function() {
+		var project = $(this).parents(".card-part");
+		var rightpart = project.find(".right-part");
+		rightpart.children("button.fail").remove();
+		rightpart.children("textarea").remove();
+		rightpart.children("button.pass").text("已通过").removeClass("pass").addClass("passed");
+		$("#project-verify-wrapper #star_project .show .collection").append(project);
+		// TODO, in the server side
+
+	});
+	// set status to be failed
+	$("#project-verify-wrapper .show .card-part button.fail").bind("click", function() {
+		if($(this).next().css("display")=="none") {
+			$(this).next().css("display", "block");
+			$(this).text("提交");
+		} else {
+			var content = $(this).next().val();
+			if(content!="") {
+				var project = $(this).parents(".card-part");
+				var rightpart = project.find(".right-part");
+				rightpart.children("button.pass").remove();
+				rightpart.children("textarea").replaceWith("<h1>否决理由</h1><div>"+rightpart.children("textarea").val()+"</div>");
+				rightpart.children("button.fail").text("已否决").removeClass("fail").addClass("failed");			
+				$("#project-verify-wrapper #join_project .show .collection").append(project);
+				// TODO, in the server side
+
+			} 
+		}
 	});
 
 });
