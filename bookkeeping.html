@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 	<meta charset=utf-8>
-	<title>行益网-News</title>
+	<title>行益网-Bookkeeping</title>
 	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="js/general.js"></script>
@@ -37,10 +37,10 @@
 
 	<!-- the container -->
 	<div id="content">
-		<div class="wrapper" id="add-news-wrapper">
+		<div class="wrapper" id="bookkeeping-wrapper">
 			<section class="container">
 				<h1 class="section-title">
-					新消息
+					开支管理
 				</h1>
 				<a class="section-title-more" id="go-back-dashboard">
 					Back to DashBoard>
@@ -48,7 +48,7 @@
 				<section class="project-part">
 					<div class="row">
 						<div class="col-1">
-							<h1>发布新消息</h1>
+							<h1>发布新开支</h1>
 						</div>
 					</div>
 					<div class="row">
@@ -58,7 +58,17 @@
 							</label>
 						</div>
 						<div class="col-2">
-							<input type="date" id="news-date">
+							<input type="date" id="book-date">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1">
+							<label>
+								金额
+							</label>
+						</div>
+						<div class="col-2">
+							<input type="number" id="book-number"></input>
 						</div>
 					</div>
 					<div class="row">
@@ -68,14 +78,14 @@
 							</label>
 						</div>
 						<div class="col-2">
-							<textarea id="news-content"></textarea>
+							<textarea id="book-content"></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-1">
 						</div>
 						<div class="col-2">
-							<button class="rounded-button" id="publish-news">发布新消息</button>
+							<button class="rounded-button" id="publish-book">公布开支</button>
 						</div>
 					</div>
 				</section>
@@ -83,23 +93,25 @@
 				<section class="project-part">
 					<div class="row">
 						<div class='col-1'>
-							<h1>管理已发布消息</h1>
+							<h1>编辑开支</h1>
 						</div>
 						<div class="col-2">
 						</div>
 					</div>
 				</section>
 				<div class="dispel"></div>
-				<section class="table-3">
+				<section class="table-4">
 					<div class="row">
 						<div class="col-1">
 							日期
 						</div>
 						<div class="col-2">
-							内容
+							金额
 						</div>
 						<div class="col-3">
+							内容
 						</div>
+						<div class="col-4"></div>
 					</div>
 					<section class="show">
 						<div class="collection">
@@ -108,9 +120,42 @@
 									12/21/2014
 								</div>
 								<div class="col-2">
-									把所有内容都写出来吧，反正总共才140个字（最多）。后面我要开始随便乱打了的苦果很深刻的高速和顾客如果客人色鬼的广东省分公司的散热风格的风格
+									12
 								</div>
 								<div class="col-3">
+									然后还是按照时间倒叙来排列吧，上面也是有字数要求的，所以也全部都显示完整吧
+								</div>
+								<div class="col-4">
+									<button class="rounded-button light-button edit">编辑</button>
+									<button class="rounded-button light-red-button remove">删除</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/21/2014
+								</div>
+								<div class="col-2">
+									12
+								</div>
+								<div class="col-3">
+									然后还是按照时间倒叙来排列吧，上面也是有字数要求的，所以也全部都显示完整吧
+								</div>
+								<div class="col-4">
+									<button class="rounded-button light-button edit">编辑</button>
+									<button class="rounded-button light-red-button remove">删除</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1">
+									12/21/2014
+								</div>
+								<div class="col-2">
+									12
+								</div>
+								<div class="col-3">
+									然后还是按照时间倒叙来排列吧，上面也是有字数要求的，所以也全部都显示完整吧
+								</div>
+								<div class="col-4">
 									<button class="rounded-button light-button edit">编辑</button>
 									<button class="rounded-button light-red-button remove">删除</button>
 								</div>

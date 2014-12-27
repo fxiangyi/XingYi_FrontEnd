@@ -235,7 +235,7 @@ $(function() {
 		For Page Create New Project Manager
 	*/
 	$("#create-new-project-manager-wrapper .fold").each(function() {
-		$(this).parents(".row").nextAll().fadeOut();
+		$(this).parents(".row").nextAll().fadeOut();  
 	});
 	$("#create-new-project-manager-wrapper .fold").bind("click", function() {
 		var ele = $(this).parents(".row").next();
@@ -248,5 +248,19 @@ $(function() {
 		$(".input-file+label").text($(this).val());
 	});
 
+	/*
+		For Volunteer Manage
+	*/
+	$("#volunteer-management-wrapper .show-result").eq(1).css("display", "none");
+
+	$("#volunteer-management-wrapper #all_project_tab").bind("click", function() {
+		$("#volunteer-management-wrapper .show-result").css("display", "none");
+		$("#volunteer-management-wrapper .show-result").eq(0).css("display", "block");	
+	});
+	
+	$("#volunteer-management-wrapper #star_project_tab").bind("click", function() {
+		$("#volunteer-management-wrapper .show-result").css("display", "none");
+		$("#volunteer-management-wrapper .show-result").eq(1).css("display", "block");	
+	});
 
 });

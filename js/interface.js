@@ -388,7 +388,7 @@ $(function() {
 	});
 	// Volunteer Management
 	$("#dashbaord-edit-project-wrapper #joiner-manage").bind("click", function() {
-		location.href = "volunteer.html";
+		location.href = "volunteer_manage.html";
 		//TODO
 	});
 
@@ -435,6 +435,182 @@ $(function() {
 	// save temporarily
 	$("#baseinfo-edit-wrapper .save-item").bind("click", function() {
 		// TODO
+	});
+
+	/**
+		For Add News
+	**/
+	// publish news
+	$("#add-news-wrapper #publish-news").bind("click", function() {
+		var date = $("#news-date").val();
+		var content = $("#news-content").val();
+		// TODO
+	});
+
+	function editItemNews(obj) {
+		obj.parents(".row").children(".col-2").attr("contentEditable", true).css({"border": "1px solid #ccc"});
+		obj.unbind("click");
+		obj.text("保存").removeClass("edit").addClass("save").bind("click", function() {
+			saveItemNews($(this));
+		});
+		obj.next().unbind("click");
+		obj.next().text("放弃").removeClass("remove").addClass("cancel").bind("click", function() {
+			cancelItemNews($(this));
+		});
+	}
+	function saveItemNews(obj) {
+		obj.parents(".row").children(".col-2").attr("contentEditable", false).css({"border": "none"});
+		obj.unbind("click");
+		obj.text("编辑").removeClass("save").addClass("edit").bind("click", function() {
+			editItemNews($(this));
+		});
+		obj.next().unbind("click");
+		obj.next().text("删除").removeClass("cancel").addClass("remove").bind("click", function() {
+			removeItemNews($(this));
+		});
+		// TODO, for the server, save news item
+		var content = obj.parents(".row").children(".col-2").text();
+	}
+	function removeItemNews(obj) {
+		obj.parents(".row").remove();
+		// TODO, for the server, delete news item
+	}
+	function cancelItemNews(obj) {
+		obj.parents(".row").children(".col-2").attr("contentEditable", false).css({"border": "none"});
+		obj.unbind("click");
+		obj.text("删除").removeClass("cancel").addClass("remove").bind("click", function() {
+			removeItemNews($(this));
+		});
+		obj.prev().unbind("click");
+		obj.prev().text("编辑").removeClass("save").addClass("edit").bind("click", function() {
+			editItemNews($(this));
+		});
+	}
+	$("#add-news-wrapper .show .collection button.edit").bind("click", function() {
+		editItemNews($(this));
+	});
+	// remove
+	$("#add-news-wrapper .show .collection button.remove").bind("click", function() {
+		removeItemNews($(this));
+	});
+
+	
+
+	/**
+		For Book Keeping
+	**/
+	// publish news
+	$("#bookkeeping-wrapper #publish-book").bind("click", function() {
+		var date = $("#book-date").val();
+		var number = parseInt($("#book-number").val());
+		var content = $("#book-content").val();
+		// TODO
+	});
+
+	function editItemBook(obj) {
+		obj.parents(".row").children(".col-1").attr("contentEditable", true).css({"border": "1px solid #ccc"});
+		obj.parents(".row").children(".col-2").attr("contentEditable", true).css({"border": "1px solid #ccc"});
+		obj.parents(".row").children(".col-3").attr("contentEditable", true).css({"border": "1px solid #ccc"});
+		obj.unbind("click");
+		obj.text("保存").removeClass("edit").addClass("save").bind("click", function() {
+			saveItemBook($(this));
+		});
+		obj.next().unbind("click");
+		obj.next().text("放弃").removeClass("remove").addClass("cancel").bind("click", function() {
+			cancelItemBook($(this));
+		});
+	}
+	function saveItemBook(obj) {
+		obj.parents(".row").children(".col-1").attr("contentEditable", false).css({"border": "none"});
+		obj.parents(".row").children(".col-2").attr("contentEditable", false).css({"border": "none"});
+		obj.parents(".row").children(".col-3").attr("contentEditable", false).css({"border": "none"});
+		obj.unbind("click");
+		obj.text("编辑").removeClass("save").addClass("edit").bind("click", function() {
+			editItemBook($(this));
+		});
+		obj.next().unbind("click");
+		obj.next().text("删除").removeClass("cancel").addClass("remove").bind("click", function() {
+			removeItemBook($(this));
+		});
+		// TODO, for the server, save news item
+		var date = obj.parents(".row").children(".col-1").text();
+		var number = obj.parents(".row").children(".col-2 div").text();
+		var content = obj.parents(".row").children(".col-3").text();
+
+	}
+	function removeItemBook(obj) {
+		obj.parents(".row").remove();
+		// TODO, for the server, delete news item
+	}
+	function cancelItemBook(obj) {
+		obj.parents(".row").children(".col-1").attr("contentEditable", false).css({"border": "none"});
+		obj.parents(".row").children(".col-2").attr("contentEditable", false).css({"border": "none"});
+		obj.parents(".row").children(".col-3").attr("contentEditable", false).css({"border": "none"});
+		obj.unbind("click");
+		obj.text("删除").removeClass("cancel").addClass("remove").bind("click", function() {
+			removeItemBook($(this));
+		});
+		obj.prev().unbind("click");
+		obj.prev().text("编辑").removeClass("save").addClass("edit").bind("click", function() {
+			editItemBook($(this));
+		});
+	}
+	$("#bookkeeping-wrapper .show .collection button.edit").bind("click", function() {
+		editItemBook($(this));
+	});
+	// remove
+	$("#bookkeeping-wrapper .show .collection button.remove").bind("click", function() {
+		removeItemBook($(this));
+	});
+
+	/**
+		For Page Volunteer Manager
+	**/
+	function editItemVolunteer(obj) {
+		obj.parents(".row").children(".col-5").attr("contentEditable", true).css({"border": "1px solid #ccc"});
+		obj.unbind("click");
+		obj.text("保存").removeClass("edit").addClass("save").bind("click", function() {
+			saveItemVolunteer($(this));
+		});
+	}
+	function saveItemVolunteer(obj) {
+		obj.parents(".row").children(".col-5").attr("contentEditable", false).css({"border": "none"});
+		obj.unbind("click");
+		obj.text("编辑").removeClass("save").addClass("edit").bind("click", function() {
+			editItemVolunteer($(this));
+		});
+		// TODO, for the server
+		var note = obj.parents(".row").children(".col-5").text();
+
+	}
+	$("#volunteer-management-wrapper .show .collection button.edit").bind("click", function() {
+		editItemVolunteer($(this));
+	});
+
+	/**
+		For Page Volunteer Manage
+	**/
+	// accept the application of the volunteer
+	$("#volunteer-management-wrapper .show button.pass").bind("click", function() {
+		var row = $(this).parents(".card-part");
+		var username = row.find(".volunteer-username").text();
+		var nickname = row.find(".volunteer-nickname").text();
+		var number = row.find(".volunteer-number").text();
+		var mail = row.find(".volunteer-mail").text();
+		row.remove();
+		var html = "<div class='row'><div class='col-1'>"+
+					username+"</div><div class='col-2'>"+
+					nickname+"</div><div class='col-3'>"+
+					number+"</div><div class='col-4'>"+
+					mail+"</div><div class='col-5'></div><div class='col-6'><button class='rounded-button edit'>编辑</button></div></div>";
+		$("#volunteer-management-wrapper #all_project .show .collection").append(html);
+		// TODO, for the server
+	});
+	// or else, refuse
+	$("#volunteer-management-wrapper .show button.fail").bind("click", function() {
+		var row = $(this).parents(".card-part");
+		row.remove();
+		// TODO, for the server
 	});
 
 });
