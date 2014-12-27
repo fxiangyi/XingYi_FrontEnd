@@ -17,11 +17,73 @@ $(function() {
 		location.href = "profile_view.html";
 		// TODO
 	});
-	// dashboard entry, go to dashboard
-	$("#dashboard-entry").bind("click", function() {
+	// dashboard entry, go to dashboard, here should be some types....
+	// Admin Dashboard
+	$("#admin-comments-management-wrapper #dashboard-entry").bind("click", function() {
 		location.href = "admin_dashboard.html";
 		// TODO
 	});
+	$("#project-verify-wrapper #dashboard-entry").bind("click", function() {
+		location.href = "admin_dashboard.html";
+		// TODO
+	});
+	// Dashboard Individual
+	$("#recent-operations-user-wrapper #dashboard-entry").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		// TODO
+	});
+	$("#view-followedpjs-user-wrapper #dashboard-entry").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		// TODO
+	});
+	$("#view-participatingpjs-user-wrapper #dashboard-entry").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		// TODO
+	});
+	// Dashboard Organization
+	$("#view-all-project-manager-wrapper #dashboard-entry").bind("click", function() {
+		location.href = "dashboard_organization.html";
+		// TODO
+	});
+	$("#create-new-project-manager-wrapper #dashboard-entry").bind("click", function() {
+		location.href = "dashboard_organization.html";
+		// TODO
+	});
+
+	// dashboard entry, go to dashboard, here should be some types....
+	// Admin Dashboard
+	$("#admin-comments-management-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "admin_dashboard.html";
+		// TODO
+	});
+	$("#project-verify-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "admin_dashboard.html";
+		// TODO
+	});
+	// Dashboard Individual
+	$("#recent-operations-user-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		// TODO
+	});
+	$("#view-followedpjs-user-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		// TODO
+	});
+	$("#view-participatingpjs-user-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "dashboard_individual.html";
+		// TODO
+	});
+	// Dashboard Organization
+	$("#view-all-project-manager-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "dashboard_organization.html";
+		// TODO
+	});
+	$("#create-new-project-manager-wrapper #go-back-dashboard").bind("click", function() {
+		location.href = "dashboard_organization.html";
+		// TODO
+	});
+	
+
 	// logout entry, to log out
 	$("#logout-entry").bind("click", function() {
 		// TODO
@@ -302,15 +364,6 @@ $(function() {
 	// scan join, have a look at projects joining
 	$("#dashboard-individual-wrapper #scan-join").bind("click", function() {
 		location.href = "view_participatingpjs_user.html";
-		//TODO
-	});
-
-	/**
-		Recent Operations User
-	**/
-	// go back to dashboard
-	$("#go-back-dashboard").bind("click", function() {
-		location.href = "dashboard_individual.html";
 		//TODO
 	});
 	
